@@ -97,6 +97,7 @@ export default class MultiSlider extends React.Component {
           stepLabel: step?.stepLabel ? step.stepLabel : ops,
           suffix: step?.suffix ? step.suffix : '',
           prefix: step?.prefix ? step.prefix : '',
+          style: step?.style || {}
         };
       } else {
         this.stepsAs[index] = {
@@ -478,7 +479,7 @@ export default class MultiSlider extends React.Component {
             )}
           {this.props.showStepLabels && (
             <Text
-              style={textStyles}
+              style={[textStyles, step.style]}
             >{`${step.prefix}${step.stepLabel}${step.suffix}`}</Text>
           )}
         </View>
